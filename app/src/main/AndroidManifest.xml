@@ -13,6 +13,13 @@
         android:theme="@style/Theme.SpotifyGo"
         tools:targetApi="31">
         <activity
+            android:name=".PreviousPlacesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MusicInfoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SpotifyGo" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"

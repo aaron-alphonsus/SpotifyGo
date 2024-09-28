@@ -1,10 +1,8 @@
 package com.example.spotifygo
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
@@ -16,7 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.spotifygo.ui.theme.SpotifyGoTheme
 
-class MainActivity : ComponentActivity() {
+class PreviousPlacesActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -30,40 +28,19 @@ class MainActivity : ComponentActivity() {
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Button(onClick = {
-                            val intent = Intent(this@MainActivity, MusicInfoActivity::class.java)
-                            startActivity(intent)
-                        }) {
-                            Text(text = "Tell me about this place through music")
-                        }
+                        Text("This is the Previous Places Activity")
 
                         Spacer(modifier = Modifier.height(16.dp))
 
                         Button(onClick = {
-                            val intent = Intent(this@MainActivity, PreviousPlacesActivity::class.java)
-                            startActivity(intent)
+                            // Navigate back or perform an action
+                            finish()
                         }) {
-                            Text(text = "Create Spotify Playlist")
+                            Text(text = "Go Back")
                         }
                     }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SpotifyGoTheme {
-        Greeting("Android")
     }
 }
